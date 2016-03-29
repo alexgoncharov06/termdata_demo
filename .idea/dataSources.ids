@@ -1,0 +1,834 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - Termometr@termometr.c7n1ldlwweuw.us-west-2.rds.amazonaws.com" uuid="d41bee50-5630-4a30-808f-0b2d67b2ba15">
+    <database-info product="MySQL" version="5.6.23-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.4">
+      <schema id="1" name="Termometr"/>
+      <table id="2" parent="1" name="auth"/>
+      <table id="3" parent="1" name="base_id"/>
+      <table id="4" parent="1" name="districts"/>
+      <table id="5" parent="1" name="errorcodes"/>
+      <table id="6" parent="1" name="errorcodes_temperature"/>
+      <table id="7" parent="1" name="history_errorcodes"/>
+      <table id="8" parent="1" name="login_baseid"/>
+      <table id="9" parent="1" name="respons_for_service"/>
+      <table id="10" parent="1" name="sensors_base_id"/>
+      <table id="11" parent="1" name="temperature"/>
+      <table id="12" parent="1" name="hibernate_sequence"/>
+      <table id="13" parent="1" name="online_data"/>
+      <table id="14" parent="1" name="temperature_old"/>
+      <column id="15" parent="2" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="16" parent="2" name="LOGIN">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="17" parent="2" name="PASS">
+        <data-type>varchar(42)</data-type>
+      </column>
+      <column id="18" parent="2" name="time">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="19" parent="2" name="role">
+        <data-type>varchar(40)</data-type>
+      </column>
+      <column id="20" parent="2" name="access">
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="21" parent="2" name="company">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <index id="22" parent="2" name="LOGIN">
+        <columns>LOGIN</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="23" parent="2" name="PRIMARY">
+        <columns>ID</columns>
+        <primary>1</primary>
+      </key>
+      <column id="24" parent="3" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="25" parent="3" name="BASE_ID">
+        <data-type>varchar(16)</data-type>
+      </column>
+      <column id="26" parent="3" name="name">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="27" parent="3" name="location">
+        <data-type>varchar(150)</data-type>
+      </column>
+      <column id="28" parent="3" name="Address">
+        <mandatory>1</mandatory>
+        <data-type>mediumtext</data-type>
+      </column>
+      <column id="29" parent="3" name="id_district">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="30" parent="3" name="status_on">
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="31" parent="3" name="phone_number">
+        <data-type>varchar(13)</data-type>
+      </column>
+      <index id="32" parent="3" name="base_id">
+        <columns>BASE_ID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="33" parent="3" name="FK_BASE_ID_DISTRICT_ID">
+        <columns>id_district</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="34" parent="3" name="base_id">
+        <columns>BASE_ID</columns>
+        <underlying-index>base_id</underlying-index>
+      </key>
+      <key id="35" parent="3" name="PRIMARY">
+        <columns>ID</columns>
+        <primary>1</primary>
+      </key>
+      <column id="36" parent="4" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="37" parent="4" name="district_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(150)</data-type>
+      </column>
+      <key id="38" parent="4" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="39" parent="5" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="40" parent="5" name="BASE_ID">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="41" parent="5" name="time">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="42" parent="5" name="code_error">
+        <data-type>varchar(150)</data-type>
+      </column>
+      <column id="43" parent="5" name="error_text">
+        <data-type>varchar(500)</data-type>
+      </column>
+      <column id="44" parent="5" name="Closed">
+        <mandatory>1</mandatory>
+        <data-type>bit(1)</data-type>
+      </column>
+      <column id="45" parent="5" name="id_temperature">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <key id="46" parent="5" name="PRIMARY">
+        <columns>ID</columns>
+        <primary>1</primary>
+      </key>
+      <column id="47" parent="6" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(19)</data-type>
+      </column>
+      <column id="48" parent="6" name="error_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="49" parent="6" name="temper_id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(19)</data-type>
+      </column>
+      <index id="50" parent="6" name="error_id">
+        <columns>error_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="51" parent="6" name="temper_id">
+        <columns>temper_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="52" parent="6" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="53" parent="6" name="temper_id">
+        <columns>temper_id</columns>
+        <underlying-index>temper_id</underlying-index>
+      </key>
+      <foreign-key id="54" parent="6" name="errorcodes_temperature_ibfk_1">
+        <columns>error_id</columns>
+        <ref-key>~.errorcodes.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="55" parent="6" name="errorcodes_temperature_ibfk_2">
+        <columns>temper_id</columns>
+        <ref-key>~.temperature.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="56" parent="6" name="FK4tuqsy43faoe06ujftlfgu92l">
+        <columns>error_id</columns>
+        <ref-key>~.errorcodes.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="57" parent="6" name="FK5fe3xnujwrsafc5amoi5ikgoo">
+        <columns>temper_id</columns>
+        <ref-key>~.temperature.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="58" parent="7" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="59" parent="7" name="error_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="60" parent="7" name="BASE_ID">
+        <mandatory>1</mandatory>
+        <data-type>varchar(16)</data-type>
+      </column>
+      <column id="61" parent="7" name="status">
+        <mandatory>1</mandatory>
+        <data-type>varchar(4)</data-type>
+      </column>
+      <column id="62" parent="7" name="text_status">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="63" parent="7" name="time_change">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="64" parent="7" name="idx">
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="65" parent="7" name="FK_ERROR">
+        <columns>error_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="66" parent="7" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="67" parent="7" name="FK4no4j8gjogkpbmfa6hngfpvs4">
+        <columns>error_id</columns>
+        <ref-key>~.errorcodes.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="68" parent="7" name="history_errorcodes_ibfk_1">
+        <columns>error_id</columns>
+        <ref-key>~.errorcodes.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="69" parent="8" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="70" parent="8" name="login_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="71" parent="8" name="base_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="72" parent="8" name="FKs0r5gdfvoh8qv6o3321edk1h1">
+        <columns>base_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="73" parent="8" name="login_id">
+        <columns>login_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="74" parent="8" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="75" parent="8" name="FKnek8y6ilu79ypxf7n5c156bnt">
+        <columns>login_id</columns>
+        <ref-key>~.auth.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="76" parent="8" name="FKs0r5gdfvoh8qv6o3321edk1h1">
+        <columns>base_id</columns>
+        <ref-key>~.base_id.base_id</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="77" parent="8" name="login_baseid_id_fk_1">
+        <columns>login_id</columns>
+        <ref-key>~.auth.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="78" parent="8" name="login_baseid_id_fk__2">
+        <columns>base_id</columns>
+        <ref-key>~.base_id.base_id</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="79" parent="9" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="80" parent="9" name="id_district">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="81" parent="9" name="surname">
+        <mandatory>1</mandatory>
+        <data-type>varchar(150)</data-type>
+      </column>
+      <column id="82" parent="9" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(150)</data-type>
+      </column>
+      <column id="83" parent="9" name="middle_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(150)</data-type>
+      </column>
+      <column id="84" parent="9" name="mobile_phone">
+        <mandatory>1</mandatory>
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="85" parent="9" name="email">
+        <data-type>varchar(150)</data-type>
+      </column>
+      <index id="86" parent="9" name="FK_DISTRICT_ID">
+        <columns>id_district</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="87" parent="9" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="88" parent="9" name="id_district_key">
+        <columns>id_district</columns>
+        <ref-key>~.districts.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="89" parent="10" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="90" parent="10" name="base_id">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="91" parent="10" name="sensor_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="92" parent="10" name="sensor_type">
+        <mandatory>1</mandatory>
+        <data-type>varchar(2)</data-type>
+      </column>
+      <column id="93" parent="10" name="sensor_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(150)</data-type>
+      </column>
+      <column id="94" parent="10" name="sensor_min">
+        <data-type>float</data-type>
+      </column>
+      <column id="95" parent="10" name="sensor_max">
+        <data-type>float</data-type>
+      </column>
+      <column id="96" parent="10" name="used">
+        <data-type>bit(1)</data-type>
+      </column>
+      <column id="97" parent="10" name="critical_error">
+        <data-type>bit(1)</data-type>
+      </column>
+      <index id="98" parent="10" name="FK_BASEID">
+        <columns>base_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="99" parent="10" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="100" parent="11" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>bigint(19)</data-type>
+      </column>
+      <column id="101" parent="11" name="BASE_ID">
+        <mandatory>1</mandatory>
+        <data-type>varchar(16)</data-type>
+      </column>
+      <column id="102" parent="11" name="time">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="103" parent="11" name="term1">
+        <data-type>float</data-type>
+      </column>
+      <column id="104" parent="11" name="term2">
+        <mandatory>1</mandatory>
+        <data-type>float</data-type>
+      </column>
+      <column id="105" parent="11" name="term3">
+        <mandatory>1</mandatory>
+        <data-type>float</data-type>
+      </column>
+      <column id="106" parent="11" name="hum">
+        <data-type>float</data-type>
+      </column>
+      <column id="107" parent="11" name="balance">
+        <data-type>float</data-type>
+      </column>
+      <column id="108" parent="11" name="signal1">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="109" parent="11" name="signal2">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="110" parent="11" name="signal3">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="111" parent="11" name="signal4">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="112" parent="11" name="signal5">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="113" parent="11" name="signal6">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="114" parent="11" name="signal7">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="115" parent="11" name="signal8">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="116" parent="11" name="signal9">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="117" parent="11" name="signal10">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="118" parent="11" name="signal11">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="119" parent="11" name="signal12">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="120" parent="11" name="signal13">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="121" parent="11" name="signal14">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="122" parent="11" name="signal15">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="123" parent="11" name="signal16">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="124" parent="11" name="term4">
+        <data-type>float</data-type>
+      </column>
+      <column id="125" parent="11" name="term5">
+        <data-type>float</data-type>
+      </column>
+      <column id="126" parent="11" name="term6">
+        <data-type>float</data-type>
+      </column>
+      <column id="127" parent="11" name="term7">
+        <data-type>float</data-type>
+      </column>
+      <column id="128" parent="11" name="term8">
+        <data-type>float</data-type>
+      </column>
+      <column id="129" parent="11" name="term9">
+        <data-type>float</data-type>
+      </column>
+      <column id="130" parent="11" name="term10">
+        <data-type>float</data-type>
+      </column>
+      <column id="131" parent="11" name="location">
+        <data-type>varchar(30)</data-type>
+        <default-expression>&apos;no location&apos;</default-expression>
+      </column>
+      <column id="132" parent="11" name="term11">
+        <data-type>float</data-type>
+      </column>
+      <column id="133" parent="11" name="term12">
+        <data-type>float</data-type>
+      </column>
+      <column id="134" parent="11" name="term13">
+        <data-type>float</data-type>
+      </column>
+      <column id="135" parent="11" name="term14">
+        <data-type>float</data-type>
+      </column>
+      <column id="136" parent="11" name="term15">
+        <data-type>float</data-type>
+      </column>
+      <column id="137" parent="11" name="term16">
+        <data-type>float</data-type>
+      </column>
+      <column id="138" parent="11" name="term17">
+        <data-type>float</data-type>
+      </column>
+      <column id="139" parent="11" name="term18">
+        <data-type>float</data-type>
+      </column>
+      <column id="140" parent="11" name="term19">
+        <data-type>float</data-type>
+      </column>
+      <column id="141" parent="11" name="term20">
+        <data-type>float</data-type>
+      </column>
+      <column id="142" parent="11" name="term21">
+        <data-type>float</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="143" parent="11" name="term22">
+        <data-type>float</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="144" parent="11" name="term23">
+        <data-type>float</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="145" parent="11" name="term24">
+        <data-type>float</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="146" parent="11" name="version">
+        <data-type>varchar(5)</data-type>
+      </column>
+      <index id="147" parent="11" name="baseid_index">
+        <columns>BASE_ID</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="148" parent="11" name="time_index">
+        <columns>time</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="149" parent="11" name="PRIMARY">
+        <columns>ID</columns>
+        <primary>1</primary>
+      </key>
+      <column id="150" parent="12" name="next_val">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="151" parent="13" name="BASE_ID">
+        <mandatory>1</mandatory>
+        <data-type>varchar(16)</data-type>
+      </column>
+      <column id="152" parent="13" name="time">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="153" parent="13" name="term1">
+        <data-type>float</data-type>
+      </column>
+      <column id="154" parent="13" name="term2">
+        <data-type>float</data-type>
+      </column>
+      <column id="155" parent="13" name="term3">
+        <data-type>float</data-type>
+      </column>
+      <column id="156" parent="13" name="term4">
+        <data-type>float</data-type>
+      </column>
+      <column id="157" parent="13" name="term5">
+        <data-type>float</data-type>
+      </column>
+      <column id="158" parent="13" name="term6">
+        <data-type>float</data-type>
+      </column>
+      <column id="159" parent="13" name="term7">
+        <data-type>float</data-type>
+      </column>
+      <column id="160" parent="13" name="term8">
+        <data-type>float</data-type>
+      </column>
+      <column id="161" parent="13" name="term9">
+        <data-type>float</data-type>
+      </column>
+      <column id="162" parent="13" name="term10">
+        <data-type>float</data-type>
+      </column>
+      <column id="163" parent="13" name="term11">
+        <data-type>float</data-type>
+      </column>
+      <column id="164" parent="13" name="term12">
+        <data-type>float</data-type>
+      </column>
+      <column id="165" parent="13" name="term13">
+        <data-type>float</data-type>
+      </column>
+      <column id="166" parent="13" name="term14">
+        <data-type>float</data-type>
+      </column>
+      <column id="167" parent="13" name="term15">
+        <data-type>float</data-type>
+      </column>
+      <column id="168" parent="13" name="term16">
+        <data-type>float</data-type>
+      </column>
+      <column id="169" parent="13" name="term17">
+        <data-type>float</data-type>
+      </column>
+      <column id="170" parent="13" name="term18">
+        <data-type>float</data-type>
+      </column>
+      <column id="171" parent="13" name="term19">
+        <data-type>float</data-type>
+      </column>
+      <column id="172" parent="13" name="term20">
+        <data-type>float</data-type>
+      </column>
+      <column id="173" parent="13" name="term21">
+        <data-type>float</data-type>
+      </column>
+      <column id="174" parent="13" name="term22">
+        <data-type>float</data-type>
+      </column>
+      <column id="175" parent="13" name="term23">
+        <data-type>float</data-type>
+      </column>
+      <column id="176" parent="13" name="term24">
+        <data-type>float</data-type>
+      </column>
+      <column id="177" parent="13" name="balance">
+        <data-type>float</data-type>
+      </column>
+      <column id="178" parent="13" name="signal1">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="179" parent="13" name="signal2">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="180" parent="13" name="signal3">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="181" parent="13" name="signal4">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="182" parent="13" name="signal5">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="183" parent="13" name="signal6">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="184" parent="13" name="signal7">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="185" parent="13" name="signal8">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="186" parent="13" name="signal9">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="187" parent="13" name="signal10">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="188" parent="13" name="signal11">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="189" parent="13" name="signal12">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="190" parent="13" name="signal13">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="191" parent="13" name="signal14">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="192" parent="13" name="signal15">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="193" parent="13" name="signal16">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="194" parent="13" name="location">
+        <data-type>varchar(30)</data-type>
+        <default-expression>&apos;no location&apos;</default-expression>
+      </column>
+      <column id="195" parent="13" name="version">
+        <data-type>varchar(5)</data-type>
+      </column>
+      <index id="196" parent="13" name="baseid_index_online">
+        <columns>BASE_ID</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="197" parent="13" name="PRIMARY">
+        <columns>BASE_ID</columns>
+        <primary>1</primary>
+      </key>
+      <column id="198" parent="14" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>bigint(19)</data-type>
+      </column>
+      <column id="199" parent="14" name="BASE_ID">
+        <data-type>varchar(16)</data-type>
+      </column>
+      <column id="200" parent="14" name="time">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="201" parent="14" name="term1">
+        <mandatory>1</mandatory>
+        <data-type>float</data-type>
+      </column>
+      <column id="202" parent="14" name="term2">
+        <mandatory>1</mandatory>
+        <data-type>float</data-type>
+      </column>
+      <column id="203" parent="14" name="term3">
+        <mandatory>1</mandatory>
+        <data-type>float</data-type>
+      </column>
+      <column id="204" parent="14" name="hum">
+        <mandatory>1</mandatory>
+        <data-type>float</data-type>
+      </column>
+      <column id="205" parent="14" name="balance">
+        <data-type>float</data-type>
+      </column>
+      <column id="206" parent="14" name="signal1">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="207" parent="14" name="signal2">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="208" parent="14" name="signal3">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="209" parent="14" name="signal4">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="210" parent="14" name="signal5">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="211" parent="14" name="signal6">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="212" parent="14" name="signal7">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="213" parent="14" name="signal8">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="214" parent="14" name="signal9">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="215" parent="14" name="signal10">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="216" parent="14" name="signal11">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="217" parent="14" name="signal12">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="218" parent="14" name="signal13">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="219" parent="14" name="signal14">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="220" parent="14" name="signal15">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="221" parent="14" name="signal16">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="222" parent="14" name="term4">
+        <data-type>float</data-type>
+      </column>
+      <column id="223" parent="14" name="term5">
+        <data-type>float</data-type>
+      </column>
+      <column id="224" parent="14" name="term6">
+        <data-type>float</data-type>
+      </column>
+      <column id="225" parent="14" name="term7">
+        <data-type>float</data-type>
+      </column>
+      <column id="226" parent="14" name="term8">
+        <data-type>float</data-type>
+      </column>
+      <column id="227" parent="14" name="term9">
+        <data-type>float</data-type>
+      </column>
+      <column id="228" parent="14" name="term10">
+        <data-type>float</data-type>
+      </column>
+      <column id="229" parent="14" name="location">
+        <data-type>varchar(30)</data-type>
+        <default-expression>&apos;no location&apos;</default-expression>
+      </column>
+      <column id="230" parent="14" name="term11">
+        <data-type>float</data-type>
+      </column>
+      <column id="231" parent="14" name="term12">
+        <data-type>float</data-type>
+      </column>
+      <column id="232" parent="14" name="term13">
+        <data-type>float</data-type>
+      </column>
+      <column id="233" parent="14" name="term14">
+        <data-type>float</data-type>
+      </column>
+      <column id="234" parent="14" name="term15">
+        <data-type>float</data-type>
+      </column>
+      <column id="235" parent="14" name="term16">
+        <data-type>float</data-type>
+      </column>
+      <column id="236" parent="14" name="term17">
+        <data-type>float</data-type>
+      </column>
+      <column id="237" parent="14" name="term18">
+        <data-type>float</data-type>
+      </column>
+      <column id="238" parent="14" name="term19">
+        <data-type>float</data-type>
+      </column>
+      <column id="239" parent="14" name="term20">
+        <data-type>float</data-type>
+      </column>
+      <column id="240" parent="14" name="term21">
+        <data-type>float</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="241" parent="14" name="term22">
+        <data-type>float</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="242" parent="14" name="term23">
+        <data-type>float</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="243" parent="14" name="term24">
+        <data-type>float</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <key id="244" parent="14" name="PRIMARY">
+        <columns>ID</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>

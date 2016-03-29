@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+
+	
+
+	<servlet>
+		<servlet-name>get</servlet-name>
+		<servlet-class>com.github.alexwolfgoncharov.termdata.servlets.Getter</servlet-class>
+	</servlet>
+
+	<!-- <servlet>
+		<servlet-name>main</servlet-name>
+		<servlet-class>servlets.Servlet</servlet-class>
+	</servlet> -->
+	<servlet>
+		<servlet-name>error</servlet-name>
+		<servlet-class>com.github.alexwolfgoncharov.termdata.servlets.Error</servlet-class>
+	</servlet>
+		<servlet>
+		<servlet-name>getset</servlet-name>
+		<servlet-class>com.github.alexwolfgoncharov.termdata.servlets.GetSettings</servlet-class>
+	</servlet>
+
+
+
+	<!-- <listener> <listener-class>listeners.DerbyDBInitializingListener</listener-class> 
+		</listener> -->
+
+</web-app>

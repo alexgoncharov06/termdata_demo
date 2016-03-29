@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - Termometr@termometr.c7n1ldlwweuw.us-west-2.rds.amazonaws.com" uuid="d41bee50-5630-4a30-808f-0b2d67b2ba15">
+      <secret-storage>master_key</secret-storage>
+      <user-name>AlexWolf</user-name>
+      <schema-pattern>Termometr.*</schema-pattern>
+      <default-schemas>Termometr.*</default-schemas>
+    </data-source>
+  </component>
+</project>
