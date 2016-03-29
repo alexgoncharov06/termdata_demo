@@ -18,7 +18,7 @@ import org.hibernate.annotations.OrderBy;
 
 
 @Entity
-@Table(name = "base_id")
+@Table(name = "base_id_demo")
 public class BaseID implements Comparable<BaseID>{
 	@Id
 	@Column(name = "ID")

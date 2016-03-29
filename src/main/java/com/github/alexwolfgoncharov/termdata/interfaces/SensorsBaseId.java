@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "sensors_base_id")
+@Table(name = "sensors_base_id_demo")
 public class SensorsBaseId  implements Comparable<SensorsBaseId> {
 	@Id
 	@Column(name = "id")

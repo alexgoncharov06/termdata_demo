@@ -9,7 +9,7 @@ import java.util.Set;
  * Created by alexwolf on 10.01.16.
  */
 @Entity
-@Table(name = "auth", schema = "Termometr")
+@Table(name = "auth_demo", schema = "Termometr")
 public class User {
     private int id;
     private String login;
@@ -23,7 +23,7 @@ public class User {
     Set<BaseID> baseIdSet;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(name = "login_baseid",
+    @JoinTable(name = "login_baseid_demo",
 
             joinColumns = @JoinColumn(name = "login_id", referencedColumnName = "ID"),
 
