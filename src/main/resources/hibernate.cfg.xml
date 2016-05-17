@@ -7,8 +7,8 @@
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="connection.url">jdbc:mysql://termometr.c7n1ldlwweuw.us-west-2.rds.amazonaws.com:3306/Termometr</property>
-		<property name="connection.username">AlexWolf</property>
-		<property name="connection.password">alex121189</property>
+		<property name="connection.username">login</property>
+		<property name="connection.password">password</property>
 		<!--<property name="hibernate.hbm2ddl.auto">update</property>-->
 <!---->
 		<!--<property name="cache.provider_class">org.hibernate.cache.HashtableCacheProvider</property>-->
